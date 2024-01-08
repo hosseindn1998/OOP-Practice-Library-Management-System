@@ -8,5 +8,7 @@ public class Jdbcconnection {
 
     public Jdbcconnection() throws SQLException {
     }
-
+    public Connection getConnection(){
+        return connection;
+    }
 }
