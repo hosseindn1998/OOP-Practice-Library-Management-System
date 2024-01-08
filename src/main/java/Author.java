@@ -4,12 +4,12 @@ public class Author {
     private String firstName;
     private String lastName;
     private int age;
-    private String []book=new String[1000];
+    private Book []book=new Book[1000];
     public Author(){
 
     }
 
-    public Author(String firstName, String lastName, int age, String[] book) {
+    public Author(String firstName, String lastName, int age, Book[] book) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
