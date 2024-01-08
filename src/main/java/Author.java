@@ -1,15 +1,15 @@
 import java.util.Arrays;
 
-public class AuthorRepository {
+public class Author {
     private String firstName;
     private String lastName;
     private int age;
     private String []book=new String[1000];
-    public AuthorRepository(){
+    public Author(){
 
     }
 
-    public AuthorRepository(String firstName, String lastName, int age, String[] book) {
+    public Author(String firstName, String lastName, int age, String[] book) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
@@ -50,7 +50,7 @@ public class AuthorRepository {
 
     @Override
     public String toString() {
-        return "AuthorRepository{" +
+        return "Author{" +
                 "firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", age=" + age +
