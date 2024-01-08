@@ -7,4 +7,10 @@ public class AuthorRepository {
 
     }
 
+    public AuthorRepository(String firstName, String lastName, int age, String[] book) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.age = age;
+        this.book = book;
+    }
 }
