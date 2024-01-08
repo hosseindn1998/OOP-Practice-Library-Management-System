@@ -3,5 +3,9 @@ public class BookRepository {
     private int year;
     private int authorID;
 
+    public BookRepository(){
+
+    }
+
 
 }
