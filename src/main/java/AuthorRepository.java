@@ -1,6 +1,10 @@
 public class AuthorRepository {
-    String firstName;
-    String lastName;
-    int age;
-    String []book=new String[1000];
+    private String firstName;
+    private String lastName;
+    private int age;
+    private String []book=new String[1000];
+    public AuthorRepository(){
+
+    }
+
 }
