@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class AuthorRepository {
     private String firstName;
     private String lastName;
@@ -44,5 +46,15 @@ public class AuthorRepository {
 
     public void setBook(String[] book) {
         this.book = book;
+    }
+
+    @Override
+    public String toString() {
+        return "AuthorRepository{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", age=" + age +
+                ", book=" + Arrays.toString(book) +
+                '}';
     }
 }
