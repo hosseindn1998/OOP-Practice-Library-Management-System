@@ -40,11 +40,11 @@ public class Author {
         this.age = age;
     }
 
-    public String[] getBook() {
+    public Book[] getBook() {
         return book;
     }
 
-    public void setBook(String[] book) {
+    public void setBook(Book[] book) {
         this.book = book;
     }
 
