@@ -7,5 +7,9 @@ public class BookRepository {
 
     }
 
-
+    public BookRepository(String title, int year, int authorID) {
+        this.title = title;
+        this.year = year;
+        this.authorID = authorID;
+    }
 }
