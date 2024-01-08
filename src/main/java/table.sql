@@ -5,3 +5,9 @@ CREATE TABLE IF NOT EXISTS auther(
     age INTEGER,
     book VARCHAR[]
     );
+CREATE TABLE IF NOT EXISTS book(
+    id SERIAL PRIMARI KEY,
+    title VARCHAR(255),
+    year INTEGER,
+    autherID INTEGER
+);
