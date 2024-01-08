@@ -1,13 +1,13 @@
-public class BookRepository {
+public class Book {
     private String title;
     private int year;
     private int authorID;
 
-    public BookRepository(){
+    public Book(){
 
     }
 
-    public BookRepository(String title, int year, int authorID) {
+    public Book(String title, int year, int authorID) {
         this.title = title;
         this.year = year;
         this.authorID = authorID;
@@ -39,7 +39,7 @@ public class BookRepository {
 
     @Override
     public String toString() {
-        return "BookRepository{" +
+        return "Book{" +
                 "title='" + title + '\'' +
                 ", year=" + year +
                 ", authorID=" + authorID +
