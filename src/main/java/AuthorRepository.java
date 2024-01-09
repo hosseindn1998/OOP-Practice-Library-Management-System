@@ -22,13 +22,21 @@ public class AuthorRepository {
         preparedStatement.executeUpdate();
     }
 
-    public void authorload(int authorId) throws SQLException {
+    public Author load(int authorId) throws SQLException {
         Connection connection = jdbcconnection.getConnection();
         String loadAuthor = "SELECT * FROM author WHERE author_id=VALUES(?);";
         PreparedStatement preparedStatement = connection.prepareStatement(loadAuthor);
         preparedStatement.setInt(1, authorId);
         ResultSet resultSet = preparedStatement.executeQuery();
-        System.out.println(resultSet);
-
+        if(resultSet.next()) {
+            int authorID=authorId;
+            String firstname=resultSet.getString("first_name");
+            String lastname=resultSet.getString("last_name");
+            int age=resultSet.getInt("age");
+            return new Author(firstname,lastname,age);
+        }else{
+            System.out.println("author not found please register now");
+        }
+        return new Author("not found","not found",0);
     }
 }
