@@ -1,19 +1,20 @@
+import java.sql.Array;
 import java.util.Arrays;
 
 public class Author {
     private String firstName;
     private String lastName;
     private int age;
-    private Book []book=new Book[1000];
+    private int []bookIDs=new int[1000];
     public Author(){
 
     }
 
-    public Author(String firstName, String lastName, int age, Book[] book) {
+    public Author(String firstName, String lastName, int age, int[] bookIDs) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
-        this.book = book;
+        this.bookIDs = bookIDs;
     }
 
     public String getFirstName() {
@@ -40,12 +41,12 @@ public class Author {
         this.age = age;
     }
 
-    public Book[] getBook() {
-        return book;
+    public int[] getBook() {
+        return bookIDs;
     }
 
-    public void setBook(Book[] book) {
-        this.book = book;
+    public void setBook(int[] bookIDs) {
+        this.bookIDs = bookIDs;
     }
 
     @Override
@@ -54,7 +55,7 @@ public class Author {
                 "firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", age=" + age +
-                ", book=" + Arrays.toString(book) +
+                ", book=" + Arrays.toString(bookIDs) +
                 '}';
     }
 }
