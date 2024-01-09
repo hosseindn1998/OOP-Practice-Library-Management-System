@@ -37,6 +37,6 @@ public class AuthorRepository {
         }else{
             System.out.println("author not found please register now");
         }
-        return new Author("not found","not found",0);
+        return new Author("not found","not found",-1);
     }
 }
