@@ -5,16 +5,16 @@ public class Author {
     private String firstName;
     private String lastName;
     private int age;
-    private int []bookIDs=new int[1000];
+    private Book []book=new Book[1000];
     public Author(){
 
     }
 
-    public Author(String firstName, String lastName, int age, int[] bookIDs) {
+    public Author(String firstName, String lastName, int age, Book[] book) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
-        this.bookIDs = bookIDs;
+        this.book = book;
     }
 
     public String getFirstName() {
@@ -41,12 +41,12 @@ public class Author {
         this.age = age;
     }
 
-    public int[] getBookIDs() {
-        return bookIDs;
+    public int[] getBook() {
+        return book;
     }
 
-    public void setBookIDs(int[] bookIDs) {
-        this.bookIDs = bookIDs;
+    public void setBookIDs(Book[] book) {
+        this.book = book;
     }
 
     @Override
@@ -55,7 +55,7 @@ public class Author {
                 "firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", age=" + age +
-                ", book=" + Arrays.toString(bookIDs) +
+                ", book=" + Arrays.toString(book) +
                 '}';
     }
 }
