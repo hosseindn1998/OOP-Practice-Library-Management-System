@@ -1,13 +1,13 @@
 CREATE TABLE IF NOT EXISTS author(
-    id SERIAL PRIMARY KEY ,
+    author_id SERIAL PRIMARY KEY,
     first_name VARCHAR(255),
     last_name VARCHAR(255),
-    age INTEGER,
-    book Book[]
+    age INTEGER
     );
 CREATE TABLE IF NOT EXISTS book(
-    id SERIAL PRIMARY KEY,
+    book_id SERIAL PRIMARY KEY,
     title VARCHAR(255),
     year INTEGER,
-    autherID INTEGER
+    autherID INTEGER ,FOREIGN KEY(autherID)
+        REFERENCES author(author_id)
 );
