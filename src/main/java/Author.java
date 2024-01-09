@@ -5,12 +5,12 @@ public class Author {
     private String firstName;
     private String lastName;
     private int age;
-    private Book []book=new Book[1000];
+    private int []book=new int[1000];
     public Author(){
 
     }
 
-    public Author(String firstName, String lastName, int age, Book[] book) {
+    public Author(String firstName, String lastName, int age, int[] book) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
@@ -45,7 +45,7 @@ public class Author {
         return book;
     }
 
-    public void setBookIDs(Book[] book) {
+    public void setBook(int[] book) {
         this.book = book;
     }
 
