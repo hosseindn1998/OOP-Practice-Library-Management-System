@@ -41,11 +41,11 @@ public class Author {
         this.age = age;
     }
 
-    public int[] getBook() {
+    public int[] getBookIDs() {
         return bookIDs;
     }
 
-    public void setBook(int[] bookIDs) {
+    public void setBookIDs(int[] bookIDs) {
         this.bookIDs = bookIDs;
     }
 
