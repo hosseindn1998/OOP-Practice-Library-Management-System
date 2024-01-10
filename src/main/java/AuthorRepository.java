@@ -13,12 +13,11 @@ public class AuthorRepository {
 
     public void save(Author author) throws SQLException {
         Connection connection = jdbcconnection.getConnection();
-        String saveAuthor = "INSERT INTO author(first_name,last_name,age,book)VALUES(?,?,?);";
+        String saveAuthor = "INSERT INTO author(first_name,last_name,age)VALUES(?,?,?);";
         PreparedStatement preparedStatement = connection.prepareStatement(saveAuthor);
         preparedStatement.setString(1, author.getFirstName());
         preparedStatement.setString(2, author.getLastName());
         preparedStatement.setInt(3, author.getAge());
-//        preparedStatement.setInt(4,author.getBook());
         preparedStatement.executeUpdate();
     }
 
