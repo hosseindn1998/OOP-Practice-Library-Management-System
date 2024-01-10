@@ -11,7 +11,7 @@ public class BookRepository{
 
 public void save(Book book) throws SQLException {
         Connection connection= jdbcconnection.getConnection();
-        String saveBook="INSERT INTO book(title,year,authorID)VALUES(?,?,?);";
+        String saveBook="INSERT INTO book(title,year,autherID)VALUES(?,?,?);";
         PreparedStatement preparedStatement=connection.prepareStatement(saveBook);
         preparedStatement.setString(1,book.getTitle());
         preparedStatement.setInt(2,book.getYear());
@@ -28,7 +28,7 @@ public void save(Book book) throws SQLException {
             int bookID=bookId;
             String title=resultSet.getString("title");
             int year=resultSet.getInt("year");
-            int authorID=resultSet.getInt("authorid");
+            int authorID=resultSet.getInt("autherid");
             return new Book(title,year,authorID);
         }else{
             System.out.println("author not found please register now");
