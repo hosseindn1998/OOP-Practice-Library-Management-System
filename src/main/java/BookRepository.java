@@ -3,12 +3,12 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class BookRepository implements CRUD {
+public class BookRepository{
     private final Jdbcconnection jdbcconnection=new Jdbcconnection();
 
     public BookRepository() throws SQLException {
     }
-@Override
+
 public void save(Book book) throws SQLException {
         Connection connection= jdbcconnection.getConnection();
         String saveBook="INSERT INTO book(title,year,authorID)VALUES(?,?,?);";
@@ -28,7 +28,7 @@ public void save(Book book) throws SQLException {
             int bookID=bookId;
             String title=resultSet.getString("title");
             int year=resultSet.getInt("year");
-            int authorID=resultSet.getInt("autherID");
+            int authorID=resultSet.getInt("authorid");
             return new Book(title,year,authorID);
         }else{
             System.out.println("author not found please register now");
