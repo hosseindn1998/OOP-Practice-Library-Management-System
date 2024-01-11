@@ -5,7 +5,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Arrays;
 
-public class AuthorRepository {
+public class AuthorRepository{
     private final Jdbcconnection jdbcconnection = new Jdbcconnection();
 
     public AuthorRepository() throws SQLException {
@@ -23,7 +23,7 @@ public class AuthorRepository {
 
     public Author load(int authorId) throws SQLException {
         Connection connection = jdbcconnection.getConnection();
-        String loadAuthor = "SELECT * FROM author WHERE author_id=VALUES(?);";
+        String loadAuthor = "SELECT * FROM author WHERE author_id=?";
         PreparedStatement preparedStatement = connection.prepareStatement(loadAuthor);
         preparedStatement.setInt(1, authorId);
         ResultSet resultSet = preparedStatement.executeQuery();

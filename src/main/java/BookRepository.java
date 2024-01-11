@@ -20,20 +20,30 @@ public void save(Book book) throws SQLException {
     }
     public Book load (int bookId) throws SQLException {
         Connection connection = jdbcconnection.getConnection();
-        String loadBook = "SELECT * FROM book WHERE book_id=VALUES(?);";
+        String loadBook = "SELECT * FROM book WHERE book_id=?;";
         PreparedStatement preparedStatement = connection.prepareStatement(loadBook);
         preparedStatement.setInt(1, bookId);
         ResultSet resultSet = preparedStatement.executeQuery();
         if(resultSet.next()) {
-            int bookID=bookId;
+            int bookID= resultSet.getInt("book_id");
             String title=resultSet.getString("title");
             int year=resultSet.getInt("year");
             int authorID=resultSet.getInt("autherid");
-            return new Book(title,year,authorID);
+            return new Book(bookID,title,year,authorID);
         }else{
             System.out.println("author not found please register now");
             return new Book("not found",-1,-1);
         }
 
     }
+    public void delete (Book book) throws SQLException {
+        Connection connection = jdbcconnection.getConnection();
+        String loadBook = "Delete FROM book WHERE book_id=?;";
+        PreparedStatement preparedStatement = connection.prepareStatement(loadBook);
+        preparedStatement.setInt(1, book.getBookId());
+        int resultSet = preparedStatement.executeUpdate();
+        System.out.println("book deleted ...");
+        }
+
+
 }

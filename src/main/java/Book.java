@@ -1,4 +1,5 @@
 public class Book {
+    private int bookId;
     private String title;
     private int year;
     private int authorID;
@@ -11,6 +12,17 @@ public class Book {
         this.title = title;
         this.year = year;
         this.authorID = authorID;
+    }
+
+    public Book(int bookId, String title, int year, int authorID) {
+        this.bookId = bookId;
+        this.title = title;
+        this.year = year;
+        this.authorID = authorID;
+    }
+
+    public int getBookId() {
+        return bookId;
     }
 
     public String getTitle() {
